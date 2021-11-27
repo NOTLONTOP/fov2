@@ -41,7 +41,7 @@ getgenv().Aiming = {
     FOV = 119,
     FOVSides = 300,
     FOVColour = Color3fromRGB(66, 66, 66),
-
+    FOVFilled = true -- if u use this fov filled shit i made give credits but 97% goes to stefanuk
     VisibleCheck = true,
     
     HitChance = 100,
@@ -87,7 +87,7 @@ function Aiming.UpdateFOV()
     circle.Position = Vector2new(Mouse.X, Mouse.Y + GetGuiInset(GuiService).Y)
     circle.NumSides = Aiming.FOVSides
     circle.Color = Aiming.FOVColour
-
+    circle.Filled = Aiming.FOVFilled
     -- // Return circle
     return circle
 end
