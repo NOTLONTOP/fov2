@@ -42,6 +42,8 @@ getgenv().Aiming = {
     VisibleCheck = true,
     FOV = 25,
     Filled = true,
+    Transparency = .1,
+    
     HitChance = 100,
     Selected = LocalPlayer,
     SelectedPart = nil,
@@ -65,7 +67,7 @@ local Aiming = getgenv().Aiming
 
 
 local circle = Drawingnew("Circle")
-circle.Transparency = 1
+circle.Transparency = Aiming.Transparency
 circle.Thickness = 2
 circle.Color = Aiming.FOVColour
 circle.Filled = Aiming.Filled
@@ -78,6 +80,7 @@ function Aiming.UpdateFOV()
         circle.Position = Vector2new(Mouse.X, Mouse.Y + GetGuiInset(GuiService).Y)
         circle.NumSides = Aiming.FOVSides
         circle.Color = Aiming.FOVColour
+        circle.Transparency = Aiming.Transparency
         circle.Filled = Aiming.Filled
         -- // Return circle
         return circle
